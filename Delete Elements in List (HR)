@@ -3,36 +3,27 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main()
-{
-    int N;
+int main(){
+    int N, value, i, index=-1;
     scanf("%d", &N);
     int arr[N];
-    if(N<1 || N>100)
-    {
-        printf("Invalid input");
-        exit(0);
-    }
-    for(int i=0; i<N; i++)
-    {
+    for(i=0; i<N; i++){
         scanf("%d", &arr[i]);
     }
-    int s;
-    scanf("%d", &s);
-    for(int i=0; i<N; i++)
-    {
-        if(arr[i] == s)
-        {
-            for(int j=i; j<N-1; j++)
-            {
-                arr[j] = arr[j+1];
-            }
-            N--;
-               break;
+    scanf("%d", &value);
+    for(i=0; i<N; i++){
+        if(arr[i]==value){
+            index=i;
+            break;
         }
     }
-    for(int i=0; i<N; i++)
-    {
+    if(index != -1){
+        for(i=index; i<N-1; i++){
+            arr[i] = arr[i+1];
+        }
+        N--;
+    }
+    for(i=0; i<N; i++){
         printf("%d ", arr[i]);
     }
     return 0;
