@@ -3,52 +3,16 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main()
-{
-    int N, temp;
-    scanf("%d", &N);
-    int arr[N];
-    if(N<1 || N>30000)
-    {
-        printf("Inavlid input");
-        exit(0);
-    }
-    for(int i=0; i<N; i++)
-    {
+int main(){
+    int n, i, result=0;
+    scanf("%d", &n);
+    int arr[n];
+    for(i=0; i<n; i++){
         scanf("%d", &arr[i]);
-        if(arr[i]<1 || arr[i]>30000)
-        {
-            printf("Invalid input");
-            exit(0);
-        }
     }
-    int count[N];
-    for(int i=0; i<N; i++)
-    {
-        count[i] = 0;
+    for(i=0; i<n; i++){
+        result ^= arr[i];
     }
-    for(int i=0; i<N; i++)
-    {
-        for(int j=0; j<N; j++)
-        {
-            if(i==j)
-            {
-                continue;
-            }
-            if(arr[i]==arr[j])
-            {
-                count[i]++;
-            }
-        }
-    }
-    for(int i=0; i<N; i++)
-    {
-        if(count[i]==0)
-        {
-            temp=i;
-            break;
-        }
-    }
-    printf("%d", arr[temp]);
+    printf("%d", result);
     return 0;
 }
