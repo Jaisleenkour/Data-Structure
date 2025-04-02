@@ -18,8 +18,7 @@ void insert(int *arr, int *size)
         printf("Element Inserted!!\n");
     }
 }
-void printList(int *arr, int n)
-{
+void printList(int *arr, int n){
     if(n==0)
        printf("List is empty!!\n");
     else{
