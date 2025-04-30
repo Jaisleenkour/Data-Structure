@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct TreeNode{
+    struct TreeNode* left;
+    int data;
+    struct TreeNode* right;
+};
+struct TreeNode* createNode(int value){
+    struct TreeNode* node = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+    node->data = value;
+    node->left = node->right = NULL;
+    return node;
+}
+void insert(int value)
+void preorder(int root)
+void inorder(int root)
+void postorder(int root)
+void levelorder(int root)
+int search(int root, int value)
+void delete(int root, int value)
+int main()
